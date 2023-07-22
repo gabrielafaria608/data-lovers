@@ -1,9 +1,7 @@
-// estas funciones son de ejemplo
+const source = String.raw`\data\ghibli\ghibli.json`;
 
-export const example = () => {
-  return 'example';
-};
-
-export const anotherExample = () => {
-  return 'OMG';
-};
+export async function getAll(){
+  const response = await fetch(source);
+  const data = await response.json();
+  return data;
+}
