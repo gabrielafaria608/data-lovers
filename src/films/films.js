@@ -1,11 +1,11 @@
-import { getAll } from "./data.js";
+import { getAll } from "/./data.js";
 
-const root = document.getElementById("root");
+const displayFilms = document.getElementById("displayFilms");
 getAll().then(data => {
     const films = Object.values(data.films).map((item)=> item);
     films.forEach(film =>{
         const card = createFilms(film);
-        root.appendChild(card);
+        displayFilms.appendChild(card);
     })    
 }).catch(error=>{
     console.error('error in:',error)
@@ -20,7 +20,7 @@ function createFilms(film){
     const image = document.createElement("img");
     image.src = film.poster;
     figure.appendChild(image);
-    const title = document.createElement("h3");
+    const title = document.createElement("h2");
     title.textContent = film.title;
     const description = document.createElement("p");
     description.textContent = film.description;
