@@ -2,32 +2,124 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Data Lovers</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio Ghibli</title>
     <link rel="stylesheet" href="stylesheets/style.css" />
+    <link rel="icon" type="image/x-icon" href="\assets\icon.png">
   </head>
   <body>
-    <header class="header">
-      <h1>Studio Ghibli</h1>
-      <nav class="sideMenuContent">
-        <img src="\assets\side_menu_icon.svg" alt="side_menu_icon" width="40px">
-        <ul class="sideMenu">
-          <li class="sideMenuItems">
-            <a href="films/films.html">Filmes</a>
-          </li>
-          <li class="sideMenuItems">
-            <a href="\characters\characters.html">Personagens</a>
-          </li>
-          <li class="sideMenuItems">
-            <a href="\locations\locations.html">Localizações</a> 
-          </li>
-        </ul>
-      </nav>
+    <header class="indexHeader">
+        <h1>Ghibli Wiki</h1>
+        <nav class="mainMenuContent">
+            <a href="films/films.html" class="mainMenuItems">
+              <img src="assets\Icon_Films.webp" alt="Icon_Films">
+              Films
+            </a>
+            <a href="characters\characters.html" class="mainMenuItems" id="middleItem">
+            <img src="assets\Icon_Characters.webp" alt="Icon_Characters">
+              Characters
+            </a>
+            <a href="locations\locations.html" class="mainMenuItems">
+            <img src="assets\Icon_Locations.webp" alt="Icon_Locations">
+              Locations
+            </a> 
+          </nav>
     </header>
 
     <main class="root">
       <article class="articleContent">
-        <h2>Studio Ghibli</h2>
-        <p>Studio Ghibli, Inc. (株式会社スタジオジブリ Kabushiki-kaisha Sutajio Jiburi), known simply as Ghibli, is a Japanese animation film studio headquartered in Koganei, Tokyo. They were founded by Isao Takahata, Hayao Miyazaki, Toshio Suzuki, and Yasuyoshi Tokuma.The company began operations in June 1985 as a subsidiary of Tokuma Shoten Co., Ltd. for the purpose of producing animated films directed by Isao Takahata and Hayao Miyazaki.</p>
+      <section>
+          <h2 class="articleItems">Studio Ghibli</h2>
+          <section class="articleItems">
+            <p>
+              Studio Ghibli, Inc., is a Japanese animation film studio headquartered in Koganei, Tokyo. 
+              They were founded by Isao Takahata, Hayao Miyazaki, Toshio Suzuki, and Yasuyoshi Tokuma.
+              The company began operations in June 1985 as a subsidiary of Tokuma Shoten Co., Ltd. 
+              for the purpose of producing animated films directed by Isao Takahata and Hayao Miyazaki.
+            </p>
+            <p>
+              Several anime features created by Ghibli have won the Animage Anime Grand Prix Award including Castle in the Sky in 1986,
+              My Neighbor Totoro in 1988, and Kiki's Delivery Service in 1989. In 2002, Spirited Away won an Oscar for
+              Best Animated Feature, the first anime film to win an Academy Award.
+            </p>
+        </section>
+        <section class="articleItems">
+          <h3>Name</h3>
+          <p>
+            The name "Ghibli" is derived from the nickname the Italians used for their Saharan scouting planes
+            (Caproni Ca.309 Ghibli) in the Second World War (and later for the AMX International AMX and Maserati Ghibli),
+            which is derived from the Libyan word for hot wind blowing through the Sahara Desert (also known as sirocco).
+          </p>
+          <p>
+            Though the Italian word is pronounced with a hard /ɡ/, the Japanese pronunciation of the studio's name 
+            is [dʑíbɯɺi], as in with a "soft g". The theory behind the name was that the studio was blowing a new wind
+            into the Japanese anime industry. Prior to their independence from Tokuma Shoten in 2005, the name "Ghibli"
+            had to be purchased from Tokuma Shoten. Miyazaki and Toshio Suzuki were initially reluctant to buy,
+            with Miyazaki proposing the studio go by a new name, "Sirocco". They ended up relenting as the name 
+            "Ghibli" carried far too much goodwill.
+          </p>
+        </section>
+        <section class="articleItems">
+          <h3>History</h3>
+          <p>
+            Founded on June 15, 1985, the studio is headed by Hayao Miyazaki along with Isao Takahata, as well as the
+            studio's executive managing director and producer Toshio Suzuki. Its origins date back to 1984, with the film
+            Nausicaä of the Valley of the Wind, which was popularized as a serialized manga in a publication of Tokuma 
+            Shoten's Animage magazine after the original screenplay was rejected. Suzuki, who worked as a tabloid reporter
+            before working at Animage, was the lynchpin that helped convince Miyazaki to pursue his manga work for Nausicaä 
+            and eventually create its film adaptation. The film was eventually produced by Topcraft, which went bankrupt on 
+            June 15, 1985, shortly after the film was released. Toru Hara, president of Topcraft, then sold the company to 
+            Toshio Suzuki and Takahata, renaming it to "Studio Ghibli". Hara would be retained as producer for a handful of 
+            the studio's early films.
+          </p>
+          <p>
+            The formal establishment of the studio signaled a sea change for Miyazaki, "We can no longer overcome inferior 
+            working conditions by staff spirit alone. Since we have had some financial success, we have to take the risk 
+            and reinvest what we have accumulated. We need to hire new staff, train and nurture them, and we also need to 
+            improve work conditions for our experienced staff... We want to create an attractive workplace and maintain it."
+          </p>
+          <p>
+            To prevent creative stagnation, Miyazaki help a belief that, "To keep Ghibli going, we must create a proper 
+            corporate structure. We need to stop assembling staff to make a film only to dismiss them once the project is 
+            completed. If we don't change this policy, we will have to quit being Ghibli. For us, it is too exhausting, at 
+            our age and with our limited physical abilities, to keep recreating a new workplace in Japan. This is why we 
+            have to leverage the foundation that we have built and improve Ghibli."
+          </p>
+          <p>
+            Much of Ghibli's works are distributed in Japan by the noted film distributor Toho. While some Ghibli films 
+            received distribution outside Japan, such as by Streamline Pictures, it was often without a wide theatrical 
+            release.
+          </p>
+        </section>
+      </section>
+      <aside class="sideContent">
+        <figure class="image">
+          <img src="\assets\Studio_Ghibli.svg"alt="studio Ghibli logo">
+          <p>
+              The company's logo features the character Totoro from Hayao Miyazaki's film My Neighbor Totoro.
+          </p>
+        </figure>
+        <section>
+          <p>Founders</p>
+          <ul>
+            <li>Yasuyoshi Tokuma</li>
+            <li>Hayao Miyazaki</li>
+            <li>Isao Takahata</li>
+            <li>Toshio Suzuki</li>
+            <li>Gorō Miyazaki</li>
+          </ul>
+        </section>
+        <section>
+          <p>Activities</p>
+          <ul>
+            <li>Planning and production of animated movies, TV commercials, TV movies, live-action movies, etc.</li>
+            <li>Various merchandising using characters appearing in animated movies, etc.</li>
+            <li>Videograms of animated films, TV shows, documentaries, etc.</li>
+            <li>Planning, editing, and production of publications.</li>
+            <li>Operation of Straw Hat Cafe and Shop in Ghibli Museum of The Forest of Mitaka.</li>
+          </ul>
+        </section>
+      </aside>
       </article>
     </main>
     <footer>
