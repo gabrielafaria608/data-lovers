@@ -9,27 +9,40 @@ body{
 }
 #root{
 	font-size: 1.4rem;
-	display: flex;
-	flex-direction:column;
+}
+.films{
+  display: flex;
 	flex-wrap:wrap;
 	align-items: center;
+  flex-direction: column;
 }
-.indexHeader {
+.header {
   position: sticky;
   background-color: #F2A30F;
   color: #fff;
   height: 110px;
-  padding: 0 80px;
+  padding: 0 0px 0 80px;
   display: flex;
   justify-content: space-between;
+  flex-direction: row;
   top: 0;
 	box-shadow:4px 7px 10px rgba(0,0,0,.2);
 }
-.indexHeader h1{
+.header h1{
   height: inherit;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 7.5vmin;
+  white-space: nowrap;
+}
+a{ 
+  text-decoration: none;
+  color:#fff;
+}
+a:active{
+  color: #F2A30F;
+  background-color: #F2A30F;
 }
 .mainMenuContent{
   cursor:pointer;
@@ -41,10 +54,8 @@ body{
 	padding: 10px;
 }
 .mainMenuItems{
-  text-decoration: none;
-  color: #fff;
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 2.3vmin;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -59,81 +70,10 @@ body{
   padding: 0 20px;
 	padding-top: 1rem;
 }
-.pagesHeader {
-  background-color: #F2A30F;
-  margin:30px 50px 30px 130px;
-  color: #fff;
-  height: 280px;
-  border: 1px solid #F2A30F;
-  border-radius: 8px;
-}
-.pagesHeader h1{
-  height: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.sideMenuContent{
-  position: fixed;
-  width: 100px;
-  top:0;
-  height: 100vh;
-  z-index: 100;
-  background-color: #F2A30F;
-  overflow:hidden;
-  transition:width .3s ease;
-  cursor:pointer;
-  box-shadow:4px 7px 10px rgba(0,0,0,.4);
-  @media screen and (min-width: 600px) {
-    width: 80px;
-  }
-}
-.sideMenuContent img{
-    padding: 20px 0 0 20px;
-}
-.sideMenuContent:hover{
-    width:250px;
-}
-.sideMenu{
-  list-style-type: none;
-  color:white;
-}
-.sideMenu :first-child{
-    padding-top:2rem;
-}
-.sideMenuItems{
-    padding-bottom:2rem;  
-}
-.sideMenuItems a{
-    position: relative;
-    display:block;
-    top:-35px;
-    padding-left:25px;
-    padding-right:15px;
-    transition:all .3s ease;
-    margin-left:25px;
-    margin-right:10px;
-    text-decoration: none;
-    color:white;
-    font-weight: 100;
-    font-size: 1.35em;
-}
-.sideMenuItems :after{
-  content:'';
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top:0;
-  left:0;
-  border-radius:2px;
-  opacity:0;
-  transition:all .5s ease;
-  z-index: -10;
+#lastItem{
+  padding-right: 2rem;
 }
 .card {
-  margin:30px 50px 30px 130px;
-  padding: 50px 150px;
-  height:700px;
   border: 1px solid #f2f2f2;
   border-radius: 8px;
   background-color:#f2f2f2;
@@ -141,20 +81,84 @@ body{
   line-height: 1.2;
   color: black;
   font-weight: 500;
-  display: flex;
-  flex-direction: column;
-  justify-content:space-around;
+}
+.cardItems{
+  padding: 5px;
 }
 .images{
   display: grid;
   place-items: center;
+  padding-bottom: 5px;
 }
 .images img{
-  height: 400px;
-  width: 300px;
+  height: 50vmin;
+  width: 40vmin;
+}
+.filterContent{
+  display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content:flex-start;
+}
+.filterBtns{
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 5px auto;
+  background-color: #fff; 
+  color: #F2A30F; 
+  font-weight: 700;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 200px;
+  text-align: center;
+  font-size: 1.5rem;
+}
+.filterContent ul{
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.filterContent input{
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+.filterContent label{
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 5px auto;
+  background-color: #fff; 
+  color: #F2A30F; 
+  font-weight: 700;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 200px;
+  text-align: center;
+}
+#orderByForm{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#orderItems{
+  display: none;
+  width: 200px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+#filterItems{
+  display: none;
+  width: 200px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 @media (width >= 1000px) {
-	.articleContent{
+.articleContent{
   background-color: #f2f2f2;
   border: 1px solid #f2f2f2;
   border-radius: 8px;
@@ -194,6 +198,28 @@ body{
 	padding-left:30px ;
 	width: 250px;
 }
+.filterContent{
+  margin: 30px 20px;
+	background-color: #DCDEDD;
+	border: 1px solid #DCDEDD;
+  border-radius: 8px;
+	padding: 20px;
+	min-height: 70vmin;
+  width: 20%;
+  float: left;
+}
+.films{
+  width: 75%;
+}
+.card {
+  margin:30px 20px;
+  padding: 50px 150px;
+  min-height:600px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content:space-around;
+}
 }
 @media (width <= 1000px) {
 	.articleContent{
@@ -219,29 +245,45 @@ body{
 		padding-left:30px;
 		padding-bottom: 10px;
 	}
+  .card {
+    margin:3vmin 5vmin;
+    padding: 20px 10px;
+    height:fit-content;
+    min-height: 200px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+  }
+  .images img{
+    width: 90%;
+    height: 100%;
+  }
 }
 @media (width <= 600px) {
-	.indexHeader{
-    height:fit-content;
+	.header{
+    height:28vmin;
     padding-top: 20px;
     top: 0;
     right: 0;
     left: 0;
     flex-direction: column;
+    justify-content: space-around;
 	}
-	.indexHeader h1{
-		height: 20px;
-	}
+	.header h1{
+		height: 8vmin;
+    font-size: 2.5rem;
+  }
 	.mainMenuContent{
-		height: 80px;
+		height: 70px;
 		align-items:center;
 		justify-content:center;
 		padding: 0;
 	}
 	.mainMenuItems{
 		text-align: center;
-		height: 60px;
-        font-size: 1.5rem;
+		height: 10vmin;
+    font-size: 1.3rem;
+    
 	}
 	.mainMenuItems img{
 		display: none;
@@ -279,22 +321,22 @@ body{
     }
 }
 @media (width <= 300px) {
-    .indexHeader{
-        height: 80px;
-        padding-top: 40px;
-        width: 100vw;
+  .header{
+    height: 80px;
+    padding-top: 40px;
+    width: 100vw;
 	}
-	.indexHeader h1{
+	.header h1{
 		height: 20px;
-        width: inherit;
+    width: inherit;
 	}
-    .articleContent{
+  .articleContent{
 		padding: 10px;
 		margin: 15px 5px 15px 5px;
-        display: flex;
-        align-items: center;
-        justify-content:space-around;
-        flex-direction: column-reverse;
-        width: 140vw;
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+    flex-direction: column-reverse;
+    width: 140vw;
 	}
 }
