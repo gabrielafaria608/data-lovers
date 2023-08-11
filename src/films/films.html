@@ -1,58 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Films | Studio Ghibli</title>
-    <link rel="stylesheet" href="/./stylesheets/style.css" />
-    <link rel="icon" type="image/x-icon" href="\.\assets\totoro.png">
-</head>
-<body>
+    <link rel="stylesheet" href="/./stylesheets/header.css" />
+    <link rel="stylesheet" href="/./stylesheets/filter.css" />
+    <link rel="stylesheet" href="/./stylesheets/films.css" />
+    <link rel="icon" type="image/x-icon" href="\.\assets\totoro.png" />
+  </head>
+  <body>
     <header class="header">
-        <h1><a href="/./index.html">Ghibli Wiki</a></h1>
-        <nav class="mainMenuContent">
-          <a href="/./films/films.html" class="mainMenuItems">
-            <img src="\.\assets\Icon_Films.webp" alt="Icon_Films">
-            Films
-          </a>
-          <a href="/./characters/characters.html" class="mainMenuItems" id="middleItem">
-          <img src="\.\assets\Icon_Characters.webp" alt="Icon_Characters">
-            Characters
-          </a>
-          <a href="/./locations/locations.html" class="mainMenuItems" id="lastItem">
-          <img src="\.\assets\Icon_Locations.webp" alt="Icon_Locations">
-            Locations
-          </a> 
-        </nav>
-        
+      <h1><a href="/./index.html">Ghibli Wiki</a></h1>
+      <nav class="mainMenuContent">
+        <a href="/./films/films.html" class="mainMenuItems">
+          <img src="\.\assets\Icon_Films.webp" alt="Icon_Films" />
+          Films
+        </a>
+        <a href="/./characters/characters.html" class="mainMenuItems">
+          <img src="\.\assets\Icon_Characters.webp" alt="Icon_Characters" />
+          Characters
+        </a>
+        <a href="/./locations/locations.html" class="mainMenuItems">
+          <img src="\.\assets\Icon_Locations.webp" alt="Icon_Locations" />
+          Locations
+        </a>
+      </nav>
     </header>
-    
+
     <main class="root">
       <aside class="filterContent">
-        <button class="filterBtns">All Films</button>
-        <ul>
+        <ul class="filterList">
+          <li class="search">
+            <input type="text" id="searchBar" placeholder="Search..." />
+          </li>
           <li class="dropdown">
             <button class="filterBtns" id="showOrderBtn">Order By</button>
             <form id="orderByForm">
               <ul id="orderItems">
                 <li>
-                  <input type="radio" name="orderByAlphabet" id="alphabeticalAsc" value="alphabeticalAsc">
-                  <label for="alphabeticalAsc">Alphabetical A-Z</label>
+                  <input
+                    type="radio"
+                    name="orderByAlphabet"
+                    id="alphabeticalAsc"
+                    value="alphabeticalAsc"
+                  />
+                  <label for="alphabeticalAsc">A-Z</label>
                 </li>
                 <li>
-                  <input type="radio" name="orderByAlphabet" id="alphabeticalDesc" value="alphabeticalDesc">
-                  <label for="alphabeticalDesc">Alphabetical Z-A</label>
-                  </li>
+                  <input
+                    type="radio"
+                    name="orderByAlphabet"
+                    id="alphabeticalDesc"
+                    value="alphabeticalDesc"
+                  />
+                  <label for="alphabeticalDesc">Z-A</label>
+                </li>
                 <li>
-                  <input type="radio" name="orderByRelease" id="firstReleased" value="firstReleased">
+                  <input
+                    type="radio"
+                    name="orderByRelease"
+                    id="firstReleased"
+                    value="firstReleased"
+                  />
                   <label for="firstReleased">First Released</label>
-                  </li>
+                </li>
                 <li>
-                  <input type="radio" name="orderByRelease" id="lastReleased" value="lastReleased">
+                  <input
+                    type="radio"
+                    name="orderByRelease"
+                    id="lastReleased"
+                    value="lastReleased"
+                  />
                   <label for="lastReleased">Last Released</label>
                 </li>
                 <li>
-                  <input type="radio" name="orderByScore" id="score" value="score">
+                  <input
+                    type="radio"
+                    name="orderByScore"
+                    id="score"
+                    value="score"
+                  />
                   <label for="score">Ratings</label>
                 </li>
               </ul>
@@ -62,39 +90,71 @@
             <button class="filterBtns" id="showFilterBtn">Filter By</button>
             <form id="filterByForm">
               <ul id="filterItems">
+                <li class="stats">Directors</li>
+                <li id="howManyFilms" class="stats"></li>
                 <li>
-                  <input type="radio" name="" id="" value="">
-                  <label for="">Alphabetical A-Z</label>
+                  <input
+                    type="radio"
+                    name="filterByDirectors"
+                    id="hayaoMiyazaki"
+                    value="Hayao Miyazaki"
+                  />
+                  <label for="hayaoMiyazaki">Hayao Miyazaki</label>
                 </li>
                 <li>
-                  <input type="radio" name="" id="" value="">
-                  <label for="">Alphabetical Z-A</label>
-                  </li>
-                <li>
-                  <input type="radio" name="" id="" value="">
-                  <label for="">First Released</label>
-                  </li>
-                <li>
-                  <input type="radio" name="" id="" value="">
-                  <label for="">Last Released</label>
+                  <input
+                    type="radio"
+                    name="filterByDirectors"
+                    id="isaoTakahata"
+                    value="Isao Takahata"
+                  />
+                  <label for="isaoTakahata">Isao Takahata</label>
                 </li>
                 <li>
-                  <input type="radio" name="" id="" value="">
-                  <label for="">Ratings</label>
+                  <input
+                    type="radio"
+                    name="filterByDirectors"
+                    id="yoshifumiKondo"
+                    value="Yoshifumi Kondō"
+                  />
+                  <label for="yoshifumiKondo">Yoshifumi Kondō</label>
+                </li>
+                <li>
+                  <input
+                    type="radio"
+                    name="filterByDirectors"
+                    id="hiroyukiMorita"
+                    value="Hiroyuki Morita"
+                  />
+                  <label for="hiroyukiMorita">Hiroyuki Morita</label>
+                </li>
+                <li>
+                  <input
+                    type="radio"
+                    name="filterByDirectors"
+                    id="goroMiyazaki"
+                    value="Gorō Miyazaki"
+                  />
+                  <label for="goroMiyazaki">Gorō Miyazaki</label>
+                </li>
+                <li>
+                  <input
+                    type="radio"
+                    name="filterByDirectors"
+                    id="hiromasaYonebayashi"
+                    value="Hiromasa Yonebayashi"
+                  />
+                  <label for="hiromasaYonebayashi">Hiromasa Yonebayashi</label>
                 </li>
               </ul>
             </form>
           </li>
-        </ulclass=>
-        <section class="filterBy">
-          
-        </section>
+        </ul>
+        <section class="filterBy"></section>
       </aside>
       <section id="displayFilms" class="films"></section>
     </main>
-    <footer>
-      
-    </footer>
+    <footer></footer>
     <script src="films.js" type="module"></script>
-</body>
+  </body>
 </html>
