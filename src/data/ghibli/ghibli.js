@@ -1965,7 +1965,7 @@ export default {
         {
           "id": "f2148ab5-f272-4057-b05a-1321e35227b4",
           "name": "Karigurashi's house",
-          "img": "https://static.wikia.nocookie.net/studio-ghibli/images/c/cd/Karigurashi019.jpg",
+          "img": "https://static.wikia.nocookie.net/studio-ghibli/images/5/5c/Karigurashi_019.jpg",
           "climate": "Warm",
           "terrain": "Under the floorboards",
           "surface_water": "10",
@@ -2296,7 +2296,7 @@ export default {
         {
           "id": "682df5c3-b09e-46af-94d1-ae0d17f9b4b6",
           "name": "Bamboo Forest",
-          "img": "https://static.wikia.nocookie.net/studio-ghibli/images/e/ec/Ghibli-kaguya-bamboo-forest.jpg",
+          "img": "https://static.wikia.nocookie.net/studio-ghibli/images/c/cd/Ghibli_Kaguya_Bamboo_Forest.jpg",
           "climate": "Tropical",
           "terrain": "Forest",
           "surface_water": "10",
