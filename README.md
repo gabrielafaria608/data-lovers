@@ -1,5 +1,7 @@
 <h1 align="center">Ghibli Wiki</h1>
+
 ![scene of my neighbor totoro](src/assets/MyNeighborTotoro.jpg)
+
 ## Índice
 
 - [1. Descrição do projeto](#1-descricao-do-projeto)
@@ -7,10 +9,6 @@
 - [3. Acesso ao Projeto](#3-acesso-ao-projeto)
 - [4. Tecnologias Utilizadas](#4-tecnologias-utilizadas)
 - [6. Autoria](#6-autoria)
-- [7. Considerações técnicas](#7-considerações-técnicas)
-- [8. Pistas, dicas e leituras
-  complementares](#8-pistas-dicas-e-leituras-complementares)
-- [9. Checklist](#9-checklist)
 
 ---
 
