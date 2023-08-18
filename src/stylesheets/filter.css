@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 .filterContent {
   display: flex;
   flex-direction: column;
@@ -94,15 +97,15 @@
 #howManyCharacters {
   display: none;
 }
-@media(width > 1000px){
-  .filterContent{
+@media (width > 1000px) {
+  .filterContent {
     width: 20%;
   }
 }
 @media (width <= 1000px) {
   .filterContent {
     background-color: hsl(39, 89%, 49%);
-    padding: 20px;
+    padding: 20px 0;
     margin: 0;
     border: 0;
     border-radius: 0;
@@ -110,13 +113,13 @@
     top: 0;
     position: sticky;
     width: 100%;
-    height: 100px;
   }
   .filterList {
-    background-color:unset;
+    background-color: unset;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    align-items: center;
   }
   .filterBtns {
     margin: 0 15px;
@@ -131,11 +134,18 @@
   }
   #searchBar {
     font-size: 1.3rem;
-    margin: auto 5px;
-    width: 35vmin;
+    margin: auto 0 auto 10px;
+    width: 33vmin;
   }
 }
 @media (width <= 600px) {
+  .filterContent {
+    max-height: fit-content;
+    min-height: 10vmin;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   .filterBtns {
     margin: 0;
     border: inherit;
@@ -151,14 +161,14 @@
 }
 @media (width <= 470px) {
   .filterContent {
-    padding: 10px;
+    padding: 16px 0;
     align-items: unset;
   }
   .filterList {
     justify-content: flex-start;
   }
   .filterBtns {
-    width: 30vmin;
+    width: 28vmin;
     font-size: 1.3rem;
   }
 }

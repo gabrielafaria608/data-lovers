@@ -48,6 +48,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     margin-left: 22%;
+    justify-content: center;
   }
 }
 @media (width <= 1000px) {

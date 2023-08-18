@@ -2,7 +2,6 @@
   margin: 0;
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
-  box-sizing: border-box;
 }
 body {
   background-color: #64b1ce;
@@ -62,8 +61,8 @@ a:active {
 }
 @media (width <= 600px) {
   .header {
-    height: 19vmin;
-    padding-top: 20px;
+    height: 16vmin;
+    padding-top: 10px;
     top: 0;
     flex-direction: column;
     align-items: center;
@@ -77,7 +76,7 @@ a:active {
     width: 100%;
     display: flex;
     justify-content: space-evenly;
-    padding-top: 20px;
+    padding-top: 10px;
   }
   .mainMenuItems {
     text-align: center;
@@ -91,7 +90,7 @@ a:active {
 @media (width <= 450px) {
   .header {
     padding: 0;
-    padding-top: 20px;
+    padding-top: 15px;
   }
   .header h1 {
     height: 6vmin;

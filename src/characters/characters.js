@@ -1,17 +1,36 @@
-import { alphabeticalOrder, searchBar, filter, ageOrder, allCharacters } from "/./data.js";
+import { alphabeticalOrder, searchBar, filter, ageOrder } from "/./data.js";
+
+import data from "../data/ghibli/ghibli.js";
 
 const showOrderBtn = document.getElementById("showOrderBtn");
 const orderItems = document.getElementById("orderItems");
 const showFilterBtn = document.getElementById("showFilterBtn");
 const filterItems = document.getElementById("filterItems");
+const orderByForm = document.getElementById("orderByForm");
+const filterByForm = document.getElementById("filterByForm");
 const displayCharacters = document.getElementById("displayCharacters");
 const radioButtonsOrderAlphabet = orderByForm.elements["orderByAlphabet"];
 const radioButtonsOrderAge = orderByForm.elements["orderByAge"];
-const radioButtonsFilterSpecie= filterByForm.elements["filterBySpecie"];
+const radioButtonsFilterSpecie = filterByForm.elements["filterBySpecie"];
 const searchCharacters = document.getElementById("searchBar");
 const howManyCharacters = document.getElementById("howManyCharacters");
 
-
+const characters = Object.values(data.films).map((item) => {
+  return {
+    people: item.people,
+    film: item.title,
+  };
+});
+const allCharacters = () => {
+  const listAll = [];
+  characters.forEach((film) => {
+    film.people.forEach((character) => {
+      character.film = film.film;
+      listAll.push(character);
+    });
+  });
+  return listAll;
+};
 function createCharacters(character) {
   const card = document.createElement("article");
   card.classList.add("cardCharacters");
@@ -54,7 +73,7 @@ function createCharacters(character) {
   info.appendChild(hairColor);
   info.appendChild(specie);
   info.appendChild(film);
-  
+
   card.appendChild(figure);
   card.appendChild(info);
 
@@ -69,7 +88,7 @@ function showInHtml(characters) {
 function showOrderedCharactersAlphabetical(event) {
   const order = event.target.value;
   if (radioButtonsOrderAlphabet) {
-    const newOrder = alphabeticalOrder(allCharacters(), order, "characters");
+    const newOrder = alphabeticalOrder(allCharacters(), order, "other");
     displayCharacters.innerHTML = "";
     showInHtml(newOrder);
   }
@@ -85,29 +104,30 @@ function showOrderedCharactersAge(event) {
 function showFilteredCharactersSpecie(event) {
   const selectedSpecie = event.target.value;
   if (radioButtonsFilterSpecie) {
-    const filteredCharacters = filter(allCharacters(), "specie", selectedSpecie);
+    const filteredCharacters = filter(
+      allCharacters(),
+      "specie",
+      selectedSpecie
+    );
     displayCharacters.innerHTML = "";
     showInHtml(filteredCharacters);
     howManyCharacters.style.display = "inline-block";
-    howManyCharacters.innerHTML = `${filteredCharacters.length} of the specie ${selectedSpecie}`
+    howManyCharacters.innerHTML = `${filteredCharacters.length} of the specie ${selectedSpecie}`;
   }
 }
 searchCharacters.addEventListener("input", (event) => {
   const searchedName = event.target.value.toLowerCase();
-  const filteredName = searchBar(allCharacters(), searchedName, "characters");
+  const filteredName = searchBar(allCharacters(), searchedName, "others");
   displayCharacters.innerHTML = "";
   showInHtml(filteredName);
 });
 for (const radioButtonOrder of radioButtonsOrderAlphabet) {
-  radioButtonOrder.addEventListener(
-    "change",
-    showOrderedCharactersAlphabetical
-  );
+  radioButtonOrder.addEventListener("change", showOrderedCharactersAlphabetical);
 }
 for (const radioButtonOrder of radioButtonsOrderAge) {
   radioButtonOrder.addEventListener("change", showOrderedCharactersAge);
 }
-for (const radioButtonOrder of radioButtonsFilterSpecie){
+for (const radioButtonOrder of radioButtonsFilterSpecie) {
   radioButtonOrder.addEventListener("change", showFilteredCharactersSpecie);
 }
 showOrderBtn.addEventListener("click", () => {

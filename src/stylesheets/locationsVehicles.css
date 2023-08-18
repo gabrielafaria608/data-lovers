@@ -1,0 +1,79 @@
+.cardLocationsAndVehicles {
+  border: 1px solid #f2f2f2;
+  border-radius: 8px;
+  background-color: #f2f2f2;
+  text-align: center;
+  line-height: 1.2;
+  color: black;
+  font-weight: 500;
+  padding: 20px 30px;
+  min-height: fit-content;
+  text-align: center;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-around;
+  width: fit-content;
+  flex: 1;
+}
+.infoLocationsAndVehicles {
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  align-items: center;
+  width: 100%;
+}
+.infoLocationsAndVehicles h2 {
+  width: 100%;
+}
+.images {
+  display: grid;
+  place-items: center;
+  height: fit-content;
+  cursor: pointer;
+}
+.images img {
+  width: 40vmin;
+}
+#howManyFilms {
+  display: none;
+}
+
+@media (width >= 1000px) {
+  #displayLocationsAndVehicles {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-left: 22%;
+    margin-top: 20px;
+    margin-right: 20px;
+  }
+}
+@media (width <= 1000px) {
+  #displayLocationsAndVehicles{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 150px;
+    width: 100%;
+  }
+  .cardLocationsAndVehicles{
+    margin: 20px 10px;
+  }
+  .cardLocationsAndVehicles:first-child{
+    margin-top: 0;
+  }
+  .images img {
+    width: 70vmin;
+  }
+}
+@media (width <= 600px) {
+  .image {
+    display: grid;
+    place-items: center;
+  }
+  .image img {
+    width: 300px;
+  }
+}
