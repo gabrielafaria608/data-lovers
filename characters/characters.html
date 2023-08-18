@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Characters | Studio Ghibli</title>
+    <link rel="stylesheet" href="/./stylesheets/header.css" />
+    <link rel="stylesheet" href="/./stylesheets/filter.css" />
+    <link rel="stylesheet" href="/./stylesheets/characters.css" />
+    <link rel="icon" type="image/x-icon" href="\.\assets\totoro.png" />
+  </head>
+  <body>
+    <header class="header">
+      <h1><a href="/./index.html">Ghibli Wiki</a></h1>
+      <nav class="mainMenuContent">
+        <a href="/./index.html" class="mainMenuItems">
+          <img src="\.\assets\Icon_Films.webp" alt="Icon_Films" />
+          Films
+        </a>
+        <a href="/./characters/characters.html" class="mainMenuItems">
+          <img src="\.\assets\Icon_Characters.webp" alt="Icon_Characters" />
+          Characters
+        </a>
+        <a href="/./locationsVehicles/locationsVehicles.html" class="mainMenuItems">
+          <img src="\.\assets\Icon_Locations.webp" alt="Icon_Locations" />
+          Locations
+        </a>
+      </nav>
+    </header>
+    <aside class="filterContent">
+      <ul class="filterList">
+        <li class="search">
+          <input type="text" id="searchBar" placeholder="Search..." />
+        </li>
+        <li>
+          <button class="filterBtns" id="showOrderBtn">Order By</button>
+          <form id="orderByForm" class="filterForms">
+            <ul id="orderItems">
+              <li>
+                <input
+                  type="radio"
+                  name="orderByAlphabet"
+                  id="alphabeticalAsc"
+                  value="alphabeticalAsc"
+                />
+                <label for="alphabeticalAsc">A-Z</label>
+              </li>
+              <li>
+                <input
+                  type="radio"
+                  name="orderByAlphabet"
+                  id="alphabeticalDesc"
+                  value="alphabeticalDesc"
+                />
+                <label for="alphabeticalDesc">Z-A</label>
+              </li>
+              <li>
+                <input
+                  type="radio"
+                  name="orderByAge"
+                  id="older"
+                  value="older"
+                />
+                <label for="older">Oldest</label>
+              </li>
+              <li>
+                <input
+                  type="radio"
+                  name="orderByAge"
+                  id="younger"
+                  value="younger"
+                />
+                <label for="younger">Youngest</label>
+              </li>
+            </ul>
+          </form>
+        </li>
+        <li>
+          <button class="filterBtns" id="showFilterBtn">Filter By</button>
+          <form id="filterByForm" class="filterForms">
+            <ul id="filterItems">
+              <li class="stats">Species</li>
+              <li id="howManyCharacters" class="stats"></li>
+              <li>
+                <input
+                  type="radio"
+                  name="filterBySpecie"
+                  id="human"
+                  value="Human"
+                />
+                <label for="human">Human</label>
+              </li>
+              <li>
+                <input
+                  type="radio"
+                  name="filterBySpecie"
+                  id="totoro"
+                  value="Totoro"
+                />
+                <label for="totoro">Totoro</label>
+              </li>
+              <li>
+                <input
+                  type="radio"
+                  name="filterBySpecie"
+                  id="cat"
+                  value="Cat"
+                />
+                <label for="cat">Cat</label>
+              </li>
+              <li>
+                <input
+                  type="radio"
+                  name="filterBySpecie"
+                  id="witch"
+                  value="Witch"
+                />
+                <label for="witch">Witch</label>
+              </li>
+              <li>
+                <input
+                  type="radio"
+                  name="filterBySpecie"
+                  id="wizard"
+                  value="Wizard"
+                />
+                <label for="wizard">Wizard</label>
+              </li>
+              <li>
+                <input
+                  type="radio"
+                  name="filterBySpecie"
+                  id="spirit"
+                  value="Spirit"
+                />
+                <label for="spirit">Spirit</label>
+              </li>
+            </ul>
+          </form>
+        </li>
+      </ul>
+      <section class="filterBy"></section>
+    </aside>
+    <main class="root">
+      <section id="displayCharacters"></section>
+    </main>
+    <footer></footer>
+    <script src="characters.js" type="module"></script>
+  </body>
+</html>

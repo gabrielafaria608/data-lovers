@@ -1,0 +1,91 @@
+.cardFilms {
+  border: 1px solid #f2f2f2;
+  border-radius: 8px;
+  background-color: #f2f2f2;
+  text-align: center;
+  line-height: 1.2;
+  color: black;
+  font-weight: 500;
+  margin: 20px 10px;
+  padding: 20px 30px;
+  min-height: fit-content;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 70%;
+}
+.infoFilms {
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  align-items: center;
+  width: 33%;
+  height: 95%;
+}
+.infoFilms h2{
+  width: 100%;
+  white-space: nowrap;
+}
+.infoFilms p{
+  width: 90%;
+}
+.images {
+  display: grid;
+  place-items: center;
+  height: fit-content;
+  cursor: pointer;
+}
+.images img {
+  width: 40vmin;
+}
+#howManyFilms{
+  display: none;
+}
+
+@media (width >= 1000px) {
+  #displayFilms {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 18%;
+  }
+}
+@media (width <= 1000px) {
+  #displayFilms{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .cardFilms {
+    padding: 20px 10px;
+    min-height: 200px;
+  }
+  .images img {
+    height: 100%;
+  }
+  .films {
+    width: 100%;
+  }
+  #title{
+    width: 100%;
+    white-space: wrap;
+  }
+}
+@media (width <= 800px) {
+  .cardFilms{
+    display: flex;
+    flex-direction: column;
+  }
+  .infoFilms{
+    width: 100%;
+  }
+}
+@media (width <= 600px) {
+  .images img{
+    width: 55vmin;
+  }
+
+}

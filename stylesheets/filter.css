@@ -1,0 +1,174 @@
+* {
+  box-sizing: border-box;
+}
+.filterContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1.5rem 1rem;
+  background-color: #dcdedd;
+  border: 1px solid #dcdedd;
+  border-radius: 8px;
+  padding: 20px;
+  float: left;
+  position: fixed;
+  top: 110px;
+}
+.filterBtns {
+  padding: 8px 15px;
+  margin: 5px auto;
+  background-color: #fff;
+  color: #f2a30f;
+  font-weight: 700;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+  font-size: 1.5rem;
+}
+.filterContent ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+#searchBar {
+  padding: 8px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  font-size: 16px;
+  color: #333;
+  background-color: #f9f9f9;
+  margin-bottom: 0.8rem;
+  width: 100%;
+}
+#searchBar:focus {
+  box-shadow: 0 0 4px #f2a30f;
+}
+.filterContent input {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+.filterContent label {
+  display: inline-block;
+  padding: 10px 10px;
+  margin: 3px auto;
+  background-color: #eb9d0e;
+  color: #fff;
+  font-weight: 700;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 95%;
+  max-width: 95%;
+  text-align: center;
+}
+.filterForms {
+  display: flex;
+  flex-direction: column;
+}
+#orderItems {
+  display: none;
+  width: 100%;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+#filterItems {
+  display: none;
+  width: 100%;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.stats {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 20px;
+  margin: 3px auto;
+  background-color: #f2a30f;
+  color: #fff;
+  font-weight: 700;
+  border: 1px solid #f2a30f;
+  border-radius: 5px;
+  text-align: center;
+  max-width: inherit;
+}
+#howManyCharacters {
+  display: none;
+}
+@media (width > 1000px) {
+  .filterContent {
+    width: 20%;
+  }
+}
+@media (width <= 1000px) {
+  .filterContent {
+    background-color: hsl(39, 89%, 49%);
+    padding: 20px 0;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+    box-shadow: 4px 7px 10px rgba(0, 0, 0, 0.2);
+    top: 0;
+    position: sticky;
+    width: 100%;
+  }
+  .filterList {
+    background-color: unset;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .filterBtns {
+    margin: 0 15px;
+    background-color: #eb9d0e;
+    color: #fff;
+    font-weight: 700;
+    border: inherit;
+    width: 25vmin;
+    text-align: center;
+    font-size: 1.7rem;
+    white-space: nowrap;
+  }
+  #searchBar {
+    font-size: 1.3rem;
+    margin: auto 0 auto 10px;
+    width: 33vmin;
+  }
+}
+@media (width <= 600px) {
+  .filterContent {
+    max-height: fit-content;
+    min-height: 10vmin;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .filterBtns {
+    margin: 0;
+    border: inherit;
+    width: 25vmin;
+    text-align: center;
+    font-size: 1.5rem;
+  }
+  #searchBar {
+    font-size: 1.3rem;
+    margin: auto 0;
+    width: 30vmin;
+  }
+}
+@media (width <= 470px) {
+  .filterContent {
+    padding: 16px 0;
+    align-items: unset;
+  }
+  .filterList {
+    justify-content: flex-start;
+  }
+  .filterBtns {
+    width: 28vmin;
+    font-size: 1.3rem;
+  }
+}
