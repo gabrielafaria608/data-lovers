@@ -16,7 +16,7 @@
 
 Este projeto teve como objetivo visualizar, filtrar, ordenar e trazer estatistica referentes ao Studio Ghibli, um estúdio de animação japonesa, considerando o que os fãs destes filmes gostariam de ver em uma wiki.
 
-![demo](src/assets/Films%20_%20Studio%20Ghibli%20-%20Opera%202023-08-18%2012-40-15.mp4)
+![demo](src\assets\Films-_-Studio-Ghibli-Opera-2023-08-21-12-03-45.gif)
 
 ## 2. :hammer: Funcionalidades
 
