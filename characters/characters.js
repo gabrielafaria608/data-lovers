@@ -1,4 +1,4 @@
-import { alphabeticalOrder, searchBar, filter, ageOrder } from "/./data.js";
+import { alphabeticalOrder, searchBar, filter, ageOrder } from "../data.js";
 
 import data from "../data/ghibli/ghibli.js";
 
