@@ -1,4 +1,4 @@
-import { alphabeticalOrder, searchBar, filter } from "/./data.js";
+import { alphabeticalOrder, searchBar, filter } from "../data.js";
 
 import data from "../data/ghibli/ghibli.js";
 
@@ -81,7 +81,6 @@ searchLocationsVehicles.addEventListener("input", (event) => {
   );
   displayLocationsAndVehicles.innerHTML = "";
   showInHtml(filteredName);
-  console.log("here");
 });
 showOrderBtn.addEventListener("click", () => {
   if (orderItems.style.display === "none") {

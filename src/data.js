@@ -9,6 +9,7 @@ export const searchBar = (data, searchedName, type) => {
     );
   }
 };
+
 export const releaseOrder = (data, order) => {
   if (order === "firstReleased") {
     data.sort((a, b) => {

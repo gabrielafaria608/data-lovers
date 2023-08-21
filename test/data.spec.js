@@ -38,10 +38,10 @@ const movingCastle = {
   people: [{ name: "Howl Jenkins Pendragon", age: "27" }],
   rt_score: "99",
 };
-const testMovies = [fireflies, castle, marnie, movingCastle];
+const testFilms = [fireflies, castle, marnie, movingCastle];
 const people = [];
-testMovies.forEach((movie) => {
-  movie.people.forEach((person) => {
+testFilms.forEach((film) => {
+  film.people.forEach((person) => {
     people.push(person);
   });
 });
@@ -52,36 +52,46 @@ describe("search by name", () => {
 
   it("should filter by search bar", () => {
     const title = "mar";
-    expect(searchBar(testMovies, title, "films")).toStrictEqual([marnie]);
+    expect(searchBar(testFilms, title, "films")).toStrictEqual([marnie]);
   });
 
   it("should filter by search bar", () => {
     const title = "fireflies";
-    expect(searchBar(testMovies, title, "films")).toStrictEqual([fireflies]);
+    expect(searchBar(testFilms, title, "films")).toStrictEqual([fireflies]);
   });
 
   it("should filter by search bar", () => {
     const title = "castle in the sky";
-    expect(searchBar(testMovies, title, "films")).toStrictEqual([castle]);
+    expect(searchBar(testFilms, title, "films")).toStrictEqual([castle]);
   });
 });
 
-describe("sort films by order", () => {
+describe("sort films by alphabetical order", () => {
   it("should be a function", () => {
     expect(typeof alphabeticalOrder).toBe("function");
   });
 
   it("should sort by AZ", () => {
-    const order = alphabeticalOrder(testMovies, "alphabeticalAsc", "films");
+    const order = alphabeticalOrder(testFilms, "alphabeticalAsc", "films");
     expect(order[0].title).toEqual("Castle in the Sky");
   });
 
+  it("should sort by AZ", () => {
+    const order = alphabeticalOrder(testFilms, "alphabeticalAsc", "films");
+    expect(order[1].title).toEqual("Grave of the Fireflies");
+  });
+
   it("should sort by ZA", () => {
-    const order = alphabeticalOrder(testMovies, "alphabeticalDesc", "films");
+    const order = alphabeticalOrder(testFilms, "alphabeticalDesc", "films");
     expect(order[0].title).toEqual("When Marnie Was There");
   });
+
+  it("should sort by ZA", () => {
+    const order = alphabeticalOrder(testFilms, "alphabeticalDesc", "films");
+    expect(order[1].title).toEqual("Howl's moving castle");
+  });
 });
-describe("sort characters by order", () => {
+describe("sort characters by alphabetical order", () => {
   it("should be a function", () => {
     expect(typeof alphabeticalOrder).toBe("function");
   });
@@ -91,9 +101,19 @@ describe("sort characters by order", () => {
     expect(order[0].name).toEqual("Anna Sasaki");
   });
 
+  it("should sort by AZ", () => {
+    const order = alphabeticalOrder(people, "alphabeticalAsc", "other");
+    expect(order[1].name).toEqual("Howl Jenkins Pendragon");
+  });
+
   it("should sort by ZA", () => {
     const order = alphabeticalOrder(people, "alphabeticalDesc", "other");
     expect(order[0].name).toEqual("Seita Yokokawa");
+  });
+
+  it("should sort by ZA", () => {
+    const order = alphabeticalOrder(people, "alphabeticalDesc", "other");
+    expect(order[1].name).toEqual("Lusheeta Toel Ul Laputa");
   });
 });
 describe("sort characters by age", () => {
@@ -106,9 +126,19 @@ describe("sort characters by age", () => {
     expect(order[0].name).toEqual("Howl Jenkins Pendragon");
   });
 
+  it("should sort by older", () => {
+    const order = ageOrder(people, "older");
+    expect(order[1].name).toEqual("Seita Yokokawa");
+  });
+
   it("should sort by younger", () => {
     const order = ageOrder(people, "younger");
     expect(order[0].name).toEqual("Anna Sasaki");
+  });
+
+  it("should sort by younger", () => {
+    const order = ageOrder(people, "younger");
+    expect(order[1].name).toEqual("Lusheeta Toel Ul Laputa");
   });
 });
 describe("sort by release", () => {
@@ -117,49 +147,49 @@ describe("sort by release", () => {
   });
 
   it("should sort by release date - first released", () => {
-    const release = releaseOrder(testMovies, "firstReleased");
+    const release = releaseOrder(testFilms, "firstReleased");
     expect(release[0].release_date).toEqual(castle.release_date);
-  });
-
-  it("should sort by release date - last released", () => {
-    const release = releaseOrder(testMovies, "lastReleased");
-    expect(release[0].release_date).toEqual(marnie.release_date);
-  });
-});
-
-describe("sort by released", () => {
-  it("should be a function", () => {
-    expect(typeof releaseOrder).toBe("function");
   });
 
   it("should sort by release date - first released", () => {
-    const release = releaseOrder(testMovies, "firstReleased");
-    expect(release[0].release_date).toEqual(castle.release_date);
+    const release = releaseOrder(testFilms, "firstReleased");
+    expect(release[1].release_date).toEqual(fireflies.release_date);
   });
 
   it("should sort by release date - last released", () => {
-    const release = releaseOrder(testMovies, "lastReleased");
+    const release = releaseOrder(testFilms, "lastReleased");
     expect(release[0].release_date).toEqual(marnie.release_date);
   });
+
+  it("should sort by release date - last released", () => {
+    const release = releaseOrder(testFilms, "lastReleased");
+    expect(release[1].release_date).toEqual(movingCastle.release_date);
+  });
 });
-describe("sort by score", () => {
+
+describe("sort films by score", () => {
   it("should be a function", () => {
     expect(typeof scoreOrder).toBe("function");
   });
 
   it("should sort by highest score", () => {
-    const score = scoreOrder(testMovies);
+    const score = scoreOrder(testFilms);
     expect(score[0].score).toEqual(movingCastle.score);
+  });
+
+  it("should sort by highest score", () => {
+    const score = scoreOrder(testFilms);
+    expect(score[1].score).toEqual(castle.score);
   });
 });
 
-describe("filter", () => {
+describe("filter films by director", () => {
   it("should be a function", () => {
     expect(typeof filter).toBe("function");
   });
 
   it("should filter by director", () => {
-    expect(filter(testMovies, "director", "Hayao Miyazaki")).toStrictEqual([
+    expect(filter(testFilms, "director", "Hayao Miyazaki")).toStrictEqual([
       castle,
     ]);
   });
