@@ -1,11 +1,11 @@
-import data from "./data/ghibli/ghibli.js";
+import data from "../data/ghibli/ghibli.js";
 import {
   alphabeticalOrder,
   releaseOrder,
   scoreOrder,
   searchBar,
   filter,
-} from "./data.js";
+} from "../data.js";
 
 const allFilms = Object.values(data.films).map((item) => item);
 const displayFilms = document.getElementById("displayFilms");
