@@ -5,7 +5,7 @@ import {
   scoreOrder,
   searchBar,
   filter,
-} from "/./data.js";
+} from "./data.js";
 
 const allFilms = Object.values(data.films).map((item) => item);
 const displayFilms = document.getElementById("displayFilms");
